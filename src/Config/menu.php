@@ -13,7 +13,7 @@ return [
      */
     [
         'key'        => 'Upselling',
-        'name'       => 'upselling::app.upselling.demo',
+        'name'       => 'Upselling::app.Admin.Upselling.demo',
         'route'      => 'upselling.admin.example.demo',
         'sort'       => 1,
         'icon'       => 'icon-dashboard',
