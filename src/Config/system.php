@@ -7,9 +7,15 @@ return [
         'sort' => 1,
     ], 
     [
-        'key'    => 'apps.upselling',
-        'name'   => 'upselling::app.title',
-        'info'   => 'upselling::app.info',
+        'key'    => 'apps.Upselling',
+        'name'   => 'Upselling::app.title',
+        'info'   => 'Upselling::app.info',
+        'sort'   => 1,
+    ],
+    [
+        'key'    => 'apps.Upselling.Setting',
+        'name'   => 'Upselling::app.Setting.title',
+        'info'   => 'Upselling::app.Setting.info',
         'sort'   => 1,
         'fields' => [
             [
@@ -84,5 +90,6 @@ return [
                 'locale_based'  => false,
             ]
         ]
-    ]
+    ],
+    
 ];
