@@ -83,6 +83,10 @@ class UpsellingServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             dirname(__DIR__) . '/Config/Upselling.php', 'Upselling'
         );
+
+        $this->mergeConfigFrom(
+            dirname(__DIR__) . '/Config/system.php', 'core'
+        );
         
     }
 
