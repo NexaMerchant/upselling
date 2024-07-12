@@ -9,15 +9,13 @@
  */
 namespace NexaMerchant\Upselling\Http\Controllers\Admin;
 
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Redirect;
 
 class SettingController extends Controller
 {
-    public function demo(Request $request) {
-        $data = [];
-        $data['code'] = 200;
-        $data['message'] = "Demo";
-        return view('Upselling::Admin.demo', compact("data"));
+    public function index() {
+
+        return Redirect::route('admin.configuration.index', (  'apps/' . 'Upselling'));
     }
 }
