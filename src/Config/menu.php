@@ -17,5 +17,12 @@ return [
         'route'      => 'upselling.admin.example.demo',
         'sort'       => 1,
         'icon'       => 'icon-dashboard',
-    ]
+    ],
+    [
+        'key'        => 'Upselling.Settings',
+        'name'       => 'Upselling::app.Admin.Upselling.settings',
+        'route'      => 'Upselling.admin.settings.index',
+        'sort'       => 2,
+        'icon'       => 'icon-dashboard',
+    ],
 ];
