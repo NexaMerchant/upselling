@@ -6,6 +6,6 @@ class ProductsController extends Controller
 {
     public function index()
     {
-        return view('upselling::admin.products.index');
+        return view('Upselling::Admin.products.index');
     }
 }
