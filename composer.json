@@ -1,0 +1,41 @@
+{
+    "name": "nexa-merchant/upselling",
+    "license": "MIT",
+    "type": "library",
+    "description" : "NexaMerchant upselling Apps",
+    "keywords": ["laravel", "upselling"],
+    "authors": [
+        {
+            "name": "Steven",
+            "email": "nice.lizhi@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "~9.0||~10.0||~11.0"
+    },
+    "require-dev": {
+        "phpunit/phpcov": ">=6.0",
+        "phpunit/phpunit": ">=8.0",
+        "laravel/framework": "~9.0||~10.0||~11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "NexaMerchant\\Upselling\\": "src/"
+        }
+    }, 
+    "autoload-dev": {
+        "psr-4": {
+            "NexaMerchant\\Upselling\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "NexaMerchant\\Upselling\\Providers\\UpsellingServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "homepage": "https://nexamerchant.github.io/docs/",
+    "minimum-stability": "stable"
+}
