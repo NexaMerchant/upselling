@@ -7,6 +7,8 @@ class RulesController extends Controller
 {
     public function index()
     {
+        //
+
         return view('Upselling::Admin.rules.index');
     }
 

@@ -39,9 +39,9 @@ class UpsellingServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
         
 
-        /*
+        
         $this->app->register(EventServiceProvider::class);
-        */
+        
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
