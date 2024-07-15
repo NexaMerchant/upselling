@@ -25,4 +25,18 @@ return [
         'sort'       => 2,
         'icon'       => 'icon-dashboard',
     ],
+    [
+        'key'        => 'Upselling.Rules',
+        'name'       => 'Upselling::app.Admin.Upselling.rules',
+        'route'      => 'Upselling.admin.rules.index',
+        'sort'       => 3,
+        'icon'       => 'icon-dashboard',
+    ],
+    [
+        'key'        => 'Upselling.Products',
+        'name'       => 'Upselling::app.Admin.Upselling.products',
+        'route'      => 'Upselling.admin.products.index',
+        'sort'       => 4,
+        'icon'       => 'icon-dashboard',
+    ],
 ];

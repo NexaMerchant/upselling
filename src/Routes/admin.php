@@ -8,8 +8,9 @@
  * 
  */
 use Illuminate\Support\Facades\Route;
+use NexaMerchant\Upselling\Http\Controllers\Admin\ProductsController;
 use NexaMerchant\Upselling\Http\Controllers\Admin\ExampleController;
-use NexaMerchant\Upselling\Http\Controllers\Admin\UpsellingController;
+use NexaMerchant\Upselling\Http\Controllers\Admin\RulesController;
 use NexaMerchant\Upselling\Http\Controllers\Admin\SettingController;
 
 Route::group(['middleware' => ['admin','admin_option_log'], 'prefix' => config('app.admin_url')], function () {
@@ -25,6 +26,20 @@ Route::group(['middleware' => ['admin','admin_option_log'], 'prefix' => config('
         Route::controller(SettingController::class)->prefix('settings')->group(function () {
 
             Route::get('/', 'index')->name('Upselling.admin.settings.index');
+
+        });
+
+        //Upselling.admin.upselling.rules.index
+        Route::controller(RulesController::class)->prefix('rules')->group(function () {
+
+            Route::get('/', 'index')->name('Upselling.admin.rules.index');
+
+        });
+
+        //upselling.admin.upselling.products.index
+        Route::controller(ProductsController::class)->prefix('products')->group(function () {
+
+            Route::get('/', 'index')->name('Upselling.admin.products.index');
 
         });
 
