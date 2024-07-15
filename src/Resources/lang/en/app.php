@@ -12,6 +12,55 @@ return [
         'Upselling' => [
             'demo' => 'Upselling Admin Demo',
         ],
+        'title' => 'Upselling Admin',
+        'info' => 'Upselling Admin Info',
+        'Setting' => [
+            'title' => 'Upselling Admin Setting',
+            'info' => 'Upselling Admin Setting Info',
+            'fields' => [
+                [
+                    'name' => 'clientEmail',
+                    'title' => 'Upselling::app.system.clientEmail',
+                    'type' => 'text',
+                    'channel_based' => true,
+                    'locale_based' => false,
+                ],
+                [
+                    'name' => 'clientPassword',
+                    'title' => 'Upselling::app.system.clientPassword',
+                    'type' => 'text',
+                    'info' => 'Upselling::app.system.clientPassword',
+                    'channel_based' => true,
+                    'locale_based' => false,
+                ],
+                [
+                    'name' => 'accountId',
+                    'title' => 'Upselling::app.system.accountId',
+                    'type' => 'text',
+                    'info' => 'Upselling::app.system.accountId',
+                    'channel_based' => true,
+                    'locale_based' => false,
+                ],
+                [
+                    'name' => 'clientId',
+                    'title' => 'Upselling::app.system.clientId',
+                    'type' => 'text',
+                    'validation' => 'required_if:active,1',
+                    'info' => 'Upselling::app.system.clientId',
+                    'channel_based' => true,
+                    'locale_based' => false,
+                ],
+                [
+                    'name' => 'apiKey',
+                    'title' => 'Upselling::app.system.apiKey',
+                    'type' => 'text',
+                    'validation' => 'required_if:active,1',
+                    'info' => 'Upselling::app.system.apiKey',
+                    'channel_based' => true,
+                    'locale_based' => false,
+                ],
+            ],
+        ],
     ],
     'Shop' => [
         'Upselling' => [
