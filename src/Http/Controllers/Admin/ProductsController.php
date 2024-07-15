@@ -8,4 +8,9 @@ class ProductsController extends Controller
     {
         return view('Upselling::Admin.products.index');
     }
+
+    public function create()
+    {
+        return view('Upselling::Admin.products.create');
+    }
 }
