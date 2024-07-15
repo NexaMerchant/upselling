@@ -10,7 +10,10 @@
 return [
     'Admin' => [
         'Upselling' => [
-            'demo' => 'Upselling Admin Demo',
+            'demo' => 'Upselling Demo',
+            'Rules' => 'Upselling Rules',
+            'Products' => 'Upselling Products',
+            'Settings' => 'Upselling Settings',
         ],
         'title' => 'Upselling Admin',
         'info' => 'Upselling Admin Info',
