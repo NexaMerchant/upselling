@@ -19,3 +19,9 @@ composer require nexa-merchant/upselling
 ```
 php artisan l5-swagger:generate
 ```
+
+# View Api Docs
+
+```
+http://localhost/api/upselling/documentation
+```
