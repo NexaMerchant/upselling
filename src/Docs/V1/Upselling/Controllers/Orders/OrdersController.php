@@ -124,10 +124,38 @@ class OrdersController {
      *      summary="Create new order",
      *      description="Creates a new order",
      *
-     *      @OA\RequestBody(
+     * 
+     *     @OA\Parameter(
+     *          name="email",
+     *          description="email column",
+     *          example="upselling@example.com",
      *          required=true,
-     *          @OA\JsonContent(ref="#/components/schemas/Order")
+     *          in="query",
+     *
+     *          @OA\Schema(
+     *              type="string"
+     *          )
      *      ),
+     *     @OA\Parameter(
+     *         name="products",
+     *        in="query",
+     *        description="Products",
+     *       required=true,
+     *      @OA\Schema(
+     *         type="array",
+     *       @OA\Items(
+     *         type="object",
+     *          @OA\Property(property="id", type="integer",
+     *          description="Product id",
+     *          example="1",
+     *          ),
+     *        @OA\Property(property="quantity", type="integer",
+     *         description="Product quantity",
+     *        example="1",
+     *      ),
+     *      ),
+     *    ),
+     *   ),
      *
      *      @OA\Response(
      *          response=201,
