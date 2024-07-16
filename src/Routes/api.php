@@ -12,7 +12,7 @@ use NexaMerchant\Upselling\Http\Controllers\Api\ExampleController;
 use NexaMerchant\Upselling\Http\Controllers\Api\OrderController;
 
 Route::group(['middleware' => ['api'], 'prefix' => 'api'], function () {
-     Route::prefix('upselling')->group(function () {
+     Route::prefix('v1/upselling')->group(function () {
 
         Route::controller(ExampleController::class)->prefix('example')->group(function () {
 
