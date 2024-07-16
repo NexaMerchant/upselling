@@ -3,7 +3,7 @@
     "license": "MIT",
     "type": "library",
     "description" : "NexaMerchant upselling Apps",
-    "keywords": ["laravel", "upselling"],
+    "keywords": ["laravel", "upselling","upsell", "upselling-rules", "upselling-products", "upselling-apps", "upselling-features", "upsell", "upsell-products", "upsell-rules", "upsell-apps", "upsell-features"],
     "authors": [
         {
             "name": "Steven",
