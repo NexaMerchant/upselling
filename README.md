@@ -13,3 +13,9 @@ Add it to config/app.php $providers
 ```
 composer require nexa-merchant/upselling
 ```
+
+# How to Publish Api Docs Or Install Apis Apps
+
+```
+php artisan l5-swagger:generate
+```
