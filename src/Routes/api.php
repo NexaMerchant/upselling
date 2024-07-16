@@ -9,6 +9,7 @@
  */
 use Illuminate\Support\Facades\Route;
 use NexaMerchant\Upselling\Http\Controllers\Api\ExampleController;
+use NexaMerchant\Upselling\Http\Controllers\Api\OrderController;
 
 Route::group(['middleware' => ['api'], 'prefix' => 'api'], function () {
      Route::prefix('upselling')->group(function () {
@@ -16,6 +17,13 @@ Route::group(['middleware' => ['api'], 'prefix' => 'api'], function () {
         Route::controller(ExampleController::class)->prefix('example')->group(function () {
 
             Route::get('demo', 'demo')->name('upselling.api.example.demo');
+
+        });
+
+        Route::controller(OrderController::class)->prefix('order')->group(function () {
+
+            Route::get('index', 'index')->name('upselling.api.order.index');
+            Route::post('store', 'store')->name('upselling.api.order.store');
 
         });
 
