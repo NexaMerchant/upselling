@@ -26,12 +26,7 @@ class RulesController extends Controller
             'status' => 'required',
         ]);
 
-        $rule = new Rule();
-        $rule->name = $request->name;
-        $rule->description = $request->description;
-        $rule->type = $request->type;
-        $rule->status = $request->status;
-        $rule->save();
+
 
         return redirect()->route('admin.rules.index');
     }
