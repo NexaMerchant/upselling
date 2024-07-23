@@ -16,7 +16,6 @@ class SettingController extends Controller
 {
     // redirect to configuration page
     public function index() {
-
         return Redirect::route('admin.configuration.index', (  'apps/' . 'Upselling'));
     }
 }
