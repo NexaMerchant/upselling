@@ -43,8 +43,15 @@
                                 <div class="form-group">
                                     <label for="conditions_type">Conditions Type</label>
                                     <select class="form-control" id="conditions_type" name="conditions_type">
-                                        <option value="1">All</option>
-                                        <option value="0">Any</option>
+                                        <?php 
+                                        $conditionsTypes = \NexaMerchant\Upselling\Models\UpsellingRule::CONDITIONS_TYPE;
+                                        
+                                        foreach($conditionsTypes as $key => $value) {
+
+                                        ?>    
+                                        <option value="<?php echo $key;?>"><?php echo $value;?></option>
+                                        <?php } ?>
+                                        
                                     </select>
                                 </div>
                                 <div class="form-group">

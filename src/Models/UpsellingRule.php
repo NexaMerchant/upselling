@@ -95,4 +95,6 @@ class UpsellingRule extends Model implements UpsellingRuleContract
     protected $casts = [
         'conditions' => 'array',
     ];
+
+    
 }
