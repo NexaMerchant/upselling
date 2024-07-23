@@ -36,6 +36,9 @@ return [
                     'title' => 'Upselling Rules Lists',
                 ]
             ],
+            'create' => [
+                'title' => 'Upselling Rules Create',
+            ],
         ],
     ],
     'Shop' => [
