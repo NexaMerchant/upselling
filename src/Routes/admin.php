@@ -34,6 +34,7 @@ Route::group(['middleware' => ['admin','admin_option_log'], 'prefix' => config('
 
             Route::get('/', 'index')->name('Upselling.admin.rules.index');
             Route::get('create', 'create')->name('Upselling.admin.rules.create');
+            Route::post('store', 'store')->name('Upselling.admin.rules.store');
 
         });
 
