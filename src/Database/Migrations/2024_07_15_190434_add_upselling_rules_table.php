@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('upselling_rules', function (Blueprint $table) {
             $table->increments('id');
             
-            $table->chat('name', 255)->comment('name of the rule');
+            $table->char('name', 255)->comment('name of the rule');
             $table->string('description')->comment('description of the rule')->nullable();
             $table->string('conditions_type', 50)->comment("conditions rules type 'product', 'category', 'quantity', 'weight', 'price', 'customer', 'cart', 'time', 'date', 'day', 'month', 'year'");
             $table->string('condition_value', 255)->comment("conditions rules value ID or value based on the condition_type");
