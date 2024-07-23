@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="conditions">Conditions</label>
-                                    <textarea class="form-control" id="conditions" name="conditions" rows="3" placeholder="Enter conditions"></textarea>
+                                    <textarea class="form-control" id="conditions" name="conditions" rows="3" placeholder="Enter conditions">{}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="conditions_value">Condition Value</label>

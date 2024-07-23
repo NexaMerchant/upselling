@@ -15,15 +15,45 @@ class UpsellingRule extends Model implements UpsellingRuleContract
     protected $table = 'upselling_rules';
 
 
+    public const CONDITIONS_TYPE_PRODUCT = 'product';
+
+    public const CONDITIONS_TYPE_CATEGORY = 'category';
+
+    public const CONDITIONS_TYPE_CART = 'cart';
+
+    public const CONDITIONS_TYPE_QUANTITY = 'quantity';
+
+    public const CONDITIONS_TYPE_WEIGHT = 'weight';
+
+    public const CONDITIONS_TYPE_PRICE = 'price';
+
+    public const CONDITIONS_TYPE_CUSTOMER = 'customer';
+
+    public const CONDITIONS_TYPE_TIME = 'time';
+
+    public const CONDITIONS_TYPE_DATE = 'date';
+
+    public const CONDITIONS_TYPE_DAY = 'day';
+
+    public const CONDITIONS_TYPE_MONTH = 'month';
+
+    public const CONDITIONS_TYPE_YEAR = 'year'; 
     
-
-
+    
     public const CONDITIONS_TYPE = [
-        'product' => 'Product',
-        'category' => 'Category',
-        'cart' => 'Cart',
+        self::CONDITIONS_TYPE_PRODUCT => 'Product',
+        self::CONDITIONS_TYPE_CATEGORY => 'Category',
+        self::CONDITIONS_TYPE_CART => 'Cart',
+        self::CONDITIONS_TYPE_QUANTITY => 'Quantity',
+        self::CONDITIONS_TYPE_WEIGHT => 'Weight',
+        self::CONDITIONS_TYPE_PRICE => 'Price',
+        self::CONDITIONS_TYPE_CUSTOMER => 'Customer',
+        self::CONDITIONS_TYPE_TIME => 'Time',
+        self::CONDITIONS_TYPE_DATE => 'Date',
+        self::CONDITIONS_TYPE_DAY => 'Day',
+        self::CONDITIONS_TYPE_MONTH => 'Month',
+        self::CONDITIONS_TYPE_YEAR => 'Year',
     ];
-
 
 
     public const RULE_TYPE_FIXED = 'fixed';
