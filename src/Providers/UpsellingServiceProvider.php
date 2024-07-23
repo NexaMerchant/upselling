@@ -12,6 +12,8 @@ namespace NexaMerchant\Upselling\Providers;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use NexaMerchant\Upselling\Contracts\UpsellingRule;
+use NexaMerchant\Upselling\Repositories\UpsellingRuleRepository;
 
 
 class UpsellingServiceProvider extends ServiceProvider
@@ -43,6 +45,8 @@ class UpsellingServiceProvider extends ServiceProvider
             ], 'Upselling');
         }
 
+        
+
     }
 
     /**
@@ -52,6 +56,11 @@ class UpsellingServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        // $this->app->bind(
+        //     UpsellingRule::class,
+        //     UpsellingRuleRepository::class
+        // );
+
         $this->registerCommands();
         $this->registerConfig();
     }

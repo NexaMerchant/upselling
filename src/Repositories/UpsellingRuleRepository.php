@@ -47,7 +47,7 @@ class UpsellingRuleRepository extends Repository
      */
     public function model(): string
     {
-        return 'NexaMerchant\Upselling\Contracts\CartRule';
+        return 'NexaMerchant\Upselling\Contracts\UpsellingRule';
     }
 
     /**

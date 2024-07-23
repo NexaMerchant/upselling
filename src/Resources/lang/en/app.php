@@ -30,6 +30,13 @@ return [
                 ],
             ],
         ],
+        'rules' => [
+            'lists' => [
+                'view' => [
+                    'title' => 'Upselling Rules Lists',
+                ]
+            ],
+        ],
     ],
     'Shop' => [
         'Upselling' => [
