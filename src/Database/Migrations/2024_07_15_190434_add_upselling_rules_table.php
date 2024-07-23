@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('rule_type', 50)->comment("type of the rule 'fixed', 'percentage', 'bundle', 'tiered', 'dynamic'");
             $table->decimal('discount', 10, 4)->default(0)->comment('discount of the rule');
             $table->json('conditions')->nullable()->comment('conditions rules');
+            $table->tinyInteger('status')->default(1)->comment('status of the rule');
 
 
             // $table->string('description')->comment('description of the rule')->nullable();

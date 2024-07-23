@@ -33,6 +33,7 @@ Route::group(['middleware' => ['admin','admin_option_log'], 'prefix' => config('
         Route::controller(RulesController::class)->prefix('rules')->group(function () {
 
             Route::get('/', 'index')->name('Upselling.admin.rules.index');
+            Route::get('create', 'create')->name('Upselling.admin.rules.create');
 
         });
 
