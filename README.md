@@ -25,3 +25,13 @@ php artisan l5-swagger:generate
 ```
 http://localhost/api/upselling/documentation
 ```
+
+# Points to Note
+```
+1) Upselling is a package that is used to upsell products.
+2) It is a package that is used to upsell products.
+3) You can chose the products you want to upsell.
+4) Create a upselling rule and include product id, category id, brand id, price range, discount range, and quantity range.
+
+
+```
