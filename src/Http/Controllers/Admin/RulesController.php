@@ -5,6 +5,7 @@ use NexaMerchant\Upserlling\Models\UpsellingRule;
 use Illuminate\Http\Request;
 use NexaMerchant\Upselling\Models\UpsellingRule as ModelsUpsellingRule;
 use Nicelizhi\Manage\Helpers\SSP;
+use Illuminate\Support\Facades\Event;
 
 class RulesController extends Controller
 {
@@ -61,6 +62,28 @@ class RulesController extends Controller
             'type' => 'required',
             'status' => 'required',
         ]);
+
+        try {
+            Event::dispatch('promotions.cart_rule.create.before');
+
+            $cartRule = $this->cartRuleRepository->create($cartRuleRequest->all());
+
+            Event::dispatch('promotions.cart_rule.create.after', $cartRule);
+
+            session()->flash('success', trans('admin::app.marketing.promotions.cart-rules.create.create-success'));
+
+            return redirect()->route('admin.marketing.promotions.cart_rules.index');
+        } catch (ValidationException $e) {
+            if ($firstError = collect($e->errors())->first()) {
+                session()->flash('error', $firstError[0]);
+            }
+        }
+
+        return redirect()->back();
+
+
+        
+        
 
 
 
