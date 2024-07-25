@@ -3,6 +3,7 @@
 namespace NexaMerchant\Upselling\Listeners;
 
 use Webkul\CartRule\Helpers\CartRule;
+use NexaMerchant\Upselling\Helper\UpsellingRule;
 
 class Cart
 {

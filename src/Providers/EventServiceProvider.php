@@ -14,6 +14,13 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'customer.registration.after' => [
             'NexaMerchant\Webhooks\Listeners\Customer@afterCreated',
-        ]
+        ],
+        'checkout.order.save.after'           => [
+            'NexaMerchant\UpsellingRule\Listeners\Order@manageCartRule',
+        ],
+
+        'checkout.cart.collect.totals.before' => [
+            'NexaMerchant\UpsellingRule\Listeners\Cart@applyCartRules',
+        ],
     ];
 }
