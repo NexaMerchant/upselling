@@ -38,5 +38,6 @@ class Upselling {
 
     public function applyUpselling($cart) {
         // Apply upselling logic here
+        var_dump($cart);
     }
 }
