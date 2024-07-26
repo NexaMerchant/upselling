@@ -17,6 +17,7 @@ use Webkul\Shipping\Facades\Shipping;
 use Webkul\Checkout\Models\CartPayment;
 use Webkul\Checkout\Models\CartAddress;
 use Webkul\Tax\Helpers\Tax;
+use Illuminate\Support\Facades\Log;
 
 class Upselling {
 
@@ -32,12 +33,13 @@ class Upselling {
         protected CustomerAddressRepository $customerAddressRepository
     )
     {
-        $this->cart = $this->cartRepository->getCart();
+        //$this->cart = $this->cartRepository->getCart();
     }
 
 
     public function applyUpselling($cart) {
+        $this->cart = $cart;
         // Apply upselling logic here
-        var_dump($cart);
+        //Log::info('Upselling logic applied '.json_encode($cart));
     }
 }

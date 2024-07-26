@@ -13,5 +13,5 @@ return [
     'versionNum' => '100',
     'description' => 'Upselling',
     'author' => 'Steve',
-    'enabled' => true,
+    'enable' => true,
 ];
