@@ -19,5 +19,12 @@ class EventServiceProvider extends ServiceProvider
         'checkout.cart.collect.totals.before' => [
             'NexaMerchant\Upselling\Listeners\Cart@applyCartRules',
         ],
+
+        'checkout.cart.upselling.before' => [
+            'NexaMerchant\Upselling\Listeners\Upselling@applyUpselling',
+        ],
+        'checkout.cart.upselling.after' => [
+            'NexaMerchant\Upselling\Listeners\Cart@applyUpsellingAfter',
+        ],
     ];
 }
