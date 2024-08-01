@@ -74,6 +74,9 @@ class Upselling {
         //     $cartTotalVolume += $cartItem->product->volume * $cartItem->quantity;
         // }
 
+        //check the email of the customer have processing order
+        $customer = auth()->guard('customer')->user();
+
         foreach ($cart->items as $item) {
             //$itemCartRuleIds = $this->process($item);
         }
