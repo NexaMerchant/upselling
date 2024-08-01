@@ -9,7 +9,7 @@
  */
 use Illuminate\Support\Facades\Route;
 use NexaMerchant\Upselling\Http\Controllers\Api\ExampleController;
-use NexaMerchant\Upselling\Http\Controllers\Api\OrderController;
+use NexaMerchant\Upselling\Http\Controllers\Api\V1\OrderController;
 
 Route::group(['middleware' => ['api'], 'prefix' => 'api'], function () {
      Route::prefix('v1/upselling')->group(function () {
