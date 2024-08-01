@@ -33,6 +33,17 @@
             "NexaMerchant\\Upselling\\Tests\\": "tests/"
         }
     },
+    "scripts": {
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-text --whitelist=src/",
+        "test-coverage-html": "phpunit --coverage-html=coverage --whitelist=src/",
+        "post-install-cmd": [
+            
+        ],
+        "post-update-cmd": [
+            
+        ]
+    },
     "extra": {
         "laravel": {
             "providers": [
