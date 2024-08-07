@@ -38,8 +38,9 @@ return [
                 * Absolute paths to directory containing the swagger annotations are stored.
             */
             'annotations' => [
-                //base_path('vendor/nexa-merchant/upselling/src/Docs/V1/Upselling'),
-                base_path('packages/Apps/Upselling/src/Docs/V1/Upselling'),
+                base_path('vendor/nexa-merchant/upselling/src/Docs/V1/Upselling'),
+                //base_path('vendor/nexa-merchant/Upselling/src/Docs/V1/Upselling'),
+
             ],
 
         ],
