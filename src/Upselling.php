@@ -82,9 +82,9 @@ class Upselling {
         //$customer = auth()->guard('customer')->user();
 
         //check the email of the customer have processing order in 24 hours
-        //$cart->customer_email = 'PLM3@163.com'; // for testing
+
         $processingOrder = $this->orderRepository->findOneWhere([
-            'customer_email' => "PLM3@163.com",
+            'customer_email' => $cart->customer_email,
             'status' => 'processing',
         ]);
         //order findwhere created_at >= now()->subDay()
@@ -94,19 +94,18 @@ class Upselling {
         Log::info("Processing Data:". now()->subDay());
         
 
-        if($processingOrder) {
+        if(!$processingOrder) {
             //Log::info('Processing order found '.json_encode($processingOrder));
 
             Cart::saveShippingMethod('free_free');
 
-            foreach ($cart->items as $item) {
-                $itemCartRuleIds = $this->process($item);
-            }
+            // Apply coupon code
+            Cart::setCouponCode('hao123');
 
-            // free shipping for the items
+
             
 
-            //Cart::collectTotals();
+            Cart::collectTotals();
 
             Log::info('Processing order cart found '.json_encode($cart));
         }
@@ -153,15 +152,19 @@ class Upselling {
 
         $baseDiscountAmount = ($quantity * $item->base_price + $item->base_tax_amount - $item->base_discount_amount) * ($rulePercent / 100);
 
+        
+        // 50% of the product price
+        $item->discount_amount = $discountAmount;
+        $item->base_discount_amount = $baseDiscountAmount;
 
-        $item->discount_amount = min(
-            $item->discount_amount + $discountAmount,
-            $item->price * $quantity + $item->tax_amount
-        );
-        $item->base_discount_amount = min(
-            $item->base_discount_amount + $baseDiscountAmount,
-            $item->base_price * $quantity + $item->base_tax_amount
-        );
+        $item->discount_percent = $rulePercent;
+        $item->base_price = $item->base_price - $baseDiscountAmount;
+        $item->price = $item->price - $discountAmount;
+        $item->total = $item->price * $item->quantity;
+        $item->base_total = $item->base_price * $item->quantity;
+
+
+        
 
         Log::info('Upselling Discount applied new '.json_encode($item));
 
