@@ -42,6 +42,20 @@ class Upselling {
     }
 
 
+    // enable the upselling
+    public function enable() {
+        // Enable upselling logic here
+        //Log::info('Upselling logic enabled');
+        config(['Upselling.enabled' => true]);
+    }
+
+    // disable the upselling
+    public function disable() {
+        // Disable upselling logic here
+        //Log::info('Upselling logic disabled');
+        config(['Upselling.enabled' => false]);
+    }
+
     public function applyUpselling($cart) {
         $this->cart = $cart;
         // Apply upselling logic here

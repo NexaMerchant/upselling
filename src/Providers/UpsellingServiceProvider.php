@@ -12,6 +12,8 @@ namespace NexaMerchant\Upselling\Providers;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\AliasLoader;
+use NexaMerchant\Upselling\Facades\Upselling;
 use NexaMerchant\Upselling\Contracts\UpsellingRule;
 use NexaMerchant\Upselling\Repositories\UpsellingRuleRepository;
 
@@ -111,5 +113,19 @@ class UpsellingServiceProvider extends ServiceProvider
                 \NexaMerchant\Upselling\Console\Commands\UnInstall::class,
             ]);
         }
+    }
+
+    /**
+     * Register cart as a singleton.
+     *
+     * @return void
+     */
+    protected function registerFacades(): void
+    {
+        $loader = AliasLoader::getInstance();
+
+        $loader->alias('upselling', Upselling::class);
+
+        $this->app->singleton('upselling', \NexaMerchant\Upselling\Upselling::class);
     }
 }
