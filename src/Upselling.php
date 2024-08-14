@@ -109,7 +109,7 @@ class Upselling {
         Log::error("Processing Data:". now()->subDay());
         
 
-        if($processingOrder) {
+        if($processingOrder && !empty($cart->customer_email)) {
             //Log::info('Processing order found '.json_encode($processingOrder));
 
             Cart::saveShippingMethod('free_free');
