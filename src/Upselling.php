@@ -103,23 +103,25 @@ class Upselling {
         ]);
         //order findwhere created_at >= now()->subDay()
 
-
-        Log::info('Processing order found '.json_encode($processingOrder));
-        Log::info("Processing Data:". now()->subDay());
+        Log::error('Processing order email '.$cart->customer_email);
+        Log::error('Processing order cart '.json_encode($cart));
+        Log::error('Processing order found '.json_encode($processingOrder));
+        Log::error("Processing Data:". now()->subDay());
         
 
-        if(!$processingOrder) {
+        if($processingOrder) {
             //Log::info('Processing order found '.json_encode($processingOrder));
 
             Cart::saveShippingMethod('free_free');
 
             // Apply coupon code
-            Cart::setCouponCode('hao123');
+            $coupon_code = "upselling50";
+            Cart::setCouponCode($coupon_code)->collectTotals();
 
 
             
 
-            Cart::collectTotals();
+           // Cart::collectTotals();
 
             Log::info('Processing order cart found '.json_encode($cart));
         }
