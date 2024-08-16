@@ -9,8 +9,8 @@
  */
 return [
     'name' => 'Upselling',
-    'version' => '1.0.0',
-    'versionNum' => '100',
+    'version' => '1.0.1',
+    'versionNum' => '101',
     'description' => 'Upselling',
     'author' => 'Steve',
     'enable' => true,
