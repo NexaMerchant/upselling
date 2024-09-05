@@ -45,84 +45,35 @@ class Upselling {
     // enable the upselling
     public function enable() {
         // Enable upselling logic here
-        //Log::info('Upselling logic enabled');
         config(['Upselling.enabled' => true]);
     }
 
     // disable the upselling
     public function disable() {
-        // Disable upselling logic here
-        //Log::info('Upselling logic disabled');
         config(['Upselling.enabled' => false]);
     }
 
     public function applyUpselling($cart) {
         $this->cart = $cart;
-        // Apply upselling logic here
-        //Log::info('Upselling logic applied '.json_encode($cart));
-
-        // // Get cart items
-        // $cartItems = $this->cartItemRepository->findWhere(['cart_id' => $this->cart->id]);
-
-        // // Get cart total
-        // $cartTotal = $this->cart->grand_total;
-
-        // // Get cart total quantity
-
-        // $cartTotalQuantity = 0;
-        // foreach ($cartItems as $cartItem) {
-        //     $cartTotalQuantity += $cartItem->quantity;
-        // }
-
-        // // Get cart total price
-        // $cartTotalPrice = 0;
-        // foreach ($cartItems as $cartItem) {
-        //     $cartTotalPrice += $cartItem->total;
-        // }
-
-        // // Get cart total weight
-        // $cartTotalWeight = 0;
-        // foreach ($cartItems as $cartItem) {
-        //     $cartTotalWeight += $cartItem->product->weight * $cartItem->quantity;
-        // }
-
-        // // Get cart total volume
-        // $cartTotalVolume = 0;
-        // foreach ($cartItems as $cartItem) {
-        //     $cartTotalVolume += $cartItem->product->volume * $cartItem->quantity;
-        // }
-
-        //check the email of the customer have processing order
-        //$customer = auth()->guard('customer')->user();
-
+      
         //check the email of the customer have processing order in 24 hours
-
+        // created_at betwwen 24 hours
         $processingOrder = $this->orderRepository->findOneWhere([
             'customer_email' => $cart->customer_email,
             'status' => 'processing',
+            'created_at' => ['>=', now()->subDay()]
         ]);
         //order findwhere created_at >= now()->subDay()
-
-        Log::error('Processing order email '.$cart->customer_email);
-        Log::error('Processing order cart '.json_encode($cart));
-        Log::error('Processing order found '.json_encode($processingOrder));
-        Log::error("Processing Data:". now()->subDay());
-        
-
         if($processingOrder && !empty($cart->customer_email)) {
             //Log::info('Processing order found '.json_encode($processingOrder));
 
             Cart::saveShippingMethod('free_free');
 
             // Apply coupon code
-            $coupon_code = "upselling50";
+            $coupon_code = "upselling50"; // 50% discount coupon code
             Cart::setCouponCode($coupon_code)->collectTotals();
 
-
-            
-
             Cart::collectTotals();
-
             Log::info('Processing order cart found '.json_encode($cart));
         }
 
