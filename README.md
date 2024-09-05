@@ -37,4 +37,5 @@ http://localhost/api/upselling/documentation
 ```
 
 # Upselling Method
-> Base use NexaMerchant Cart rule, and use it for cost the price for order
+> Base use NexaMerchant Cart rule, and use it for cost the price for order, use special coupon code for the the order.
+
