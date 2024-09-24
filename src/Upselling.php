@@ -57,7 +57,7 @@ class Upselling {
         $this->cart = $cart;
       
         //check the email of the customer have processing order in 24 hours
-        // created_at betwwen 24 hours
+        // created_at in last 24 hours
         $processingOrder = $this->orderRepository->findOneWhere([
             'customer_email' => $cart->customer_email,
             'status' => 'processing',

@@ -4,7 +4,7 @@ namespace NexaMerchant\Upselling\Docs\V1\Upselling\Controllers;
 
 /**
  * @OA\Info(
- *      version="1.0.1",
+ *      version="1.0.2",
  *      title="NexaMerchant Store Upselling Rest API Documentation",
  *      description="NexaMerchant Store Upselling Rest API Documentation",
  *
