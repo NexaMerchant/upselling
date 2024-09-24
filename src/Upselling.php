@@ -27,6 +27,8 @@ class Upselling {
 
     private $cart;
 
+    private $coupon_code;
+
     public function __construct(
         protected CartRepository $cartRepository,
         protected OrderRepository $orderRepository,
@@ -53,6 +55,11 @@ class Upselling {
         config(['Upselling.enabled' => false]);
     }
 
+    // set coupon code
+    public function setCouponCode($coupon_code) {
+        $this->coupon_code = $coupon_code;
+    }
+
     public function applyUpselling($cart) {
         $this->cart = $cart;
       
@@ -70,8 +77,11 @@ class Upselling {
             Cart::saveShippingMethod('free_free');
 
             // Apply coupon code
-            $coupon_code = "upselling50"; // 50% discount coupon code
-            Cart::setCouponCode($coupon_code)->collectTotals();
+            if(!empty($this->coupon_code)) {
+                $coupon_code = $this->coupon_code;
+                Cart::setCouponCode($coupon_code)->collectTotals();
+            }
+            
 
             Cart::collectTotals();
             Log::info('Processing order cart found '.json_encode($cart));
