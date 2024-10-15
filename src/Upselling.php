@@ -70,9 +70,13 @@ class Upselling {
             'status' => 'processing',
             'created_at' => ['>=', now()->subDay()]
         ]);
-        //order findwhere created_at >= now()->subDay()
-        if($processingOrder && !empty($cart->customer_email)) {
-            //Log::info('Processing order found '.json_encode($processingOrder));
+
+        // check the cart have coupon code
+        if($cart->coupon_code) {
+            $this->coupon_code = $cart->coupon_code;
+        }
+        
+        if($processingOrder && !empty($cart->customer_email) && empty($cart->coupon_code)) {
 
             Cart::saveShippingMethod('free_free');
 
@@ -82,12 +86,9 @@ class Upselling {
                 Cart::setCouponCode($coupon_code)->collectTotals();
             }
             
-
             Cart::collectTotals();
             Log::info('Processing order cart found '.json_encode($cart));
         }
-
-
 
     }
 
