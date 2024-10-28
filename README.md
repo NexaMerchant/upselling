@@ -1,5 +1,8 @@
 # NexaMerchant/Upselling
 
+[![Build Status](https://github.com/NexaMerchant/upselling/workflows/Laravel/badge.svg)](https://github.com/NexaMerchant/upselling)
+[![Release](https://img.shields.io/github/release/NexaMerchant/upselling.svg?style=flat-square)](https://github.com/NexaMerchant/upselling/releases)
+
 # How to Install
 
 
