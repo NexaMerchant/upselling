@@ -78,7 +78,7 @@ class Upselling {
         
         if($processingOrder && !empty($cart->customer_email) && empty($cart->coupon_code)) {
 
-            Cart::saveShippingMethod('free_free');
+            // Cart::saveShippingMethod('free_free'); disable the shipping method
 
             // Apply coupon code
             if(!empty($this->coupon_code)) {

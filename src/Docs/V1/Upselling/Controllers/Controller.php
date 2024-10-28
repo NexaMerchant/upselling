@@ -14,7 +14,7 @@ namespace NexaMerchant\Upselling\Docs\V1\Upselling\Controllers;
  * )
  *
  * @OA\Server(
- *      url=APP_URL,
+ *      url="http://localhost:8000/api/v1",
  *      description="NexaMerchant Rest API"
  * )
  *
