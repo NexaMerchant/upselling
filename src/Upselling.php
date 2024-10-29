@@ -67,8 +67,7 @@ class Upselling {
         // created_at in last 24 hours
         $processingOrder = $this->orderRepository->findOneWhere([
             'customer_email' => $cart->customer_email,
-            'status' => 'processing',
-            'created_at' => ['>=', now()->subDay()]
+            'status' => 'processing'
         ]);
 
         // check the cart have coupon code
