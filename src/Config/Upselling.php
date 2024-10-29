@@ -9,8 +9,8 @@
  */
 return [
     'name' => 'Upselling',
-    'version' => '1.0.2',
-    'versionNum' => '102',
+    'version' => '1.0.3',
+    'versionNum' => '103',
     'description' => 'Upselling',
     'author' => 'Steve',
     'enable' => env('UPSELLING_ENABLE', true)
