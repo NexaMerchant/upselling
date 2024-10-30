@@ -86,7 +86,7 @@ class Upselling {
             }
             
             Cart::collectTotals();
-            Log::info('Processing order cart found '.json_encode($cart));
+            //Log::info('Processing order cart found '.json_encode($cart));
         }
 
     }
