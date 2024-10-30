@@ -2,6 +2,9 @@
 
 [![Build Status](https://github.com/NexaMerchant/upselling/workflows/Laravel/badge.svg)](https://github.com/NexaMerchant/upselling)
 [![Release](https://img.shields.io/github/release/NexaMerchant/upselling.svg?style=flat-square)](https://github.com/NexaMerchant/upselling/releases)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/Nexa-Merchant/upselling.svg?style=flat-square)](https://packagist.org/packages/Nexa-Merchant/upselling)
+[![Total Downloads](https://img.shields.io/packagist/dt/Nexa-Merchant/upselling.svg?style=flat-square)](https://packagist.org/packages/Nexa-Merchant/upselling)
+
 
 # How to Install
 
